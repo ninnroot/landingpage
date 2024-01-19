@@ -15,7 +15,7 @@ const questionAnswer: QuestionAnswer[] = [
     answer: "I am not gay.",
   },
   {
-    question: "Mama or nyimalay",
+    question: "Mama or nyimalay?",
     answer: "Mama",
   },
   { question: "Do you love GUSTO?", answer: "No, I don't" },
@@ -46,8 +46,10 @@ export const Icon = ({ question, answer }: QuestionAnswer) => {
 
 const Faq = () => {
   return (
-    <div className="mx-80 text-white py-20">
-      <p className="text-3xl font-bold mb-10">Frequent asked questions</p>
+    <div className="xl:mx-80 lg:mx-64 sm:mx-24 mx-8  text-white py-20">
+      <p className="text-2xl md:text-3xl font-bold mb-10">
+        Frequent asked questions
+      </p>
       <div className="flex flex-col gap-4">
         {questionAnswer.map((item: QuestionAnswer) => (
           <div key={item.answer}>

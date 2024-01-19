@@ -41,9 +41,9 @@ const Contact = () => {
   });
   console.log(messageData);
   return (
-    <div className="mx-32 text-white py-10">
-      <div className="grid grid-cols-2 gap-10 w-full">
-        <div className="col-span-1 bg-gradient-to-b from-gray-700 to-gray-900 h-[100vh] p-10 flex flex-col justify-center items-start ">
+    <div className="lg:mx-32 sm:mx-14 mx-3 text-white py-10">
+      <div className="grid xl:grid-cols-2 grid-cols-1 gap-10 w-full">
+        <div className="col-span-1 bg-gradient-to-b from-gray-700 to-gray-900 xl:h-[100vh] p-10 flex flex-col justify-center items-start ">
           <p className="text-3xl font-bold mb-3">Get in touch</p>
           <p className="leading-7 text-lg mb-10">
             Getting in touch with us is easy. Whether you prefer to call, email

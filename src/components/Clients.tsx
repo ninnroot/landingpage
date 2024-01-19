@@ -58,16 +58,16 @@ const Clients = () => {
   const threeReviewers = clientReviews.slice(0, 3);
   const [open, setOpen] = useState<boolean>(false);
   return (
-    <div className="flex flex-col items-center py-10 gap-6 text-white mx-32">
+    <div className="flex flex-col items-center py-10 gap-6 text-white lg:mx-32 md:mx-16 mx-3">
       <p>Testimonails</p>
       <p className="mx-auto max-w-xl text-center text-3xl">
         We have worked with thousands of amazing people
       </p>
-      <div className="grid grid-cols-4 gap-6 w-full min-h-52 max-h-fit">
+      <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 w-full min-h-52 max-h-fit">
         {threeReviewers.map((item) => (
           <div
             key={item.id}
-            className="bg-gray-900 rounded-xl p-6 flex flex-col justify-between"
+            className="bg-gray-900 rounded-xl p-6 flex flex-col justify-between gap-10"
           >
             <div className="text-sm">
               <span>{item.reviews}</span>

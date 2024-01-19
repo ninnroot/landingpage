@@ -8,13 +8,13 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer = () => {
   return (
-    <div className="mx-32 py-20">
+    <div className="lg:mx-32 sm:mx-14 mx-3 py-20 ">
       <Divider style={{ backgroundColor: "gray" }} />
-      <div className="flex justify-between mt-10">
-        <p className="text-gray-400 text-sm">
+      <div className="flex justify-between mt-10 gap-10">
+        <p className="text-gray-400 text-center text-sm">
           @2023 Tone Tone Lay. All right reserved.
         </p>
-        <div className="w-56 flex gap-6">
+        <div className="w-56 flex flex-wrap justify-center md:gap-6 gap-6">
           <FacebookIcon sx={{ color: "gray" }} />
           <InstagramIcon sx={{ color: "gray" }} />
           <TwitterIcon sx={{ color: "gray" }} />

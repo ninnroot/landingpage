@@ -56,19 +56,32 @@ const contentServices: ContentServices = {
         "Maintenance and support",
       ],
     },
+    {
+      offer: "Consulting",
+      description: "Dedicated consulting for your business",
+      privilege: [
+        "Architecture and design",
+        "Project planning and management",
+        "Requirements gathering and analysis",
+        "Technology assessment and selection",
+        "Maintenance and support",
+      ],
+    },
   ],
 };
 
 const Services = () => {
   return (
     <div className="w-full bg-gray-800 h-full py-10">
-      <div className="flex flex-col gap-6 text-white items-center mx-32">
-        <p>{contentServices.title}</p>
-        <Typography variant="h3">{contentServices.contentTitle}</Typography>
+      <div className="flex flex-col gap-6 text-white items-center lg:mx-32 md:mx-16 mx-3">
+        <p className="text-xl">{contentServices.title}</p>
+        <Typography variant="h3" sx={{ textAlign: "center" }}>
+          {contentServices.contentTitle}
+        </Typography>
         <div className="mx-auto max-w-2xl text-center leading-8">
           {contentServices.content}
         </div>
-        <div className="grid grid-cols-3 gap-6 w-full min-h-64 max-h-96">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-6 w-full min-h-64 ">
           {contentServices.options.map((item) => (
             <div
               key={item.offer}
