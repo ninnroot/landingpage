@@ -1,143 +1,110 @@
-import Box from "@mui/material/Box";
-import SwipeableDrawer from "@mui/material/SwipeableDrawer";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import React, { ReactNode } from "react";
-import Brightness2Icon from "@mui/icons-material/Brightness2";
-import { Button, ToggleButton } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
-import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
-import CallIcon from "@mui/icons-material/Call";
-import LoginIcon from "@mui/icons-material/Login";
-import FormatAlignRightIcon from "@mui/icons-material/FormatAlignRight";
-
-type Anchor = "right";
-
-interface Nav {
-  icon: ReactNode;
-  services: string;
-  contactUs: string;
-  faqs: string;
-  logIn: ReactNode;
-}
-
-const nav: Nav = {
-  icon: <Brightness2Icon />,
-  services: "Services",
-  contactUs: "Contact Us",
-  faqs: "FAQs",
-  logIn: <Button endIcon={<ArrowForwardIcon />}>Log in</Button>,
-};
-
-interface ModileDrawer {
-  text: string;
-  icon: ReactNode;
-}
-const mobileDrawer: ModileDrawer[] = [
-  { text: "Services", icon: <MiscellaneousServicesIcon /> },
-  { text: "FAQs", icon: <QuestionMarkIcon /> },
-  { text: "Contact Us", icon: <CallIcon /> },
-];
+import React from "react";
+import { BiMenuAltRight } from "react-icons/bi";
+import { RxCross1 } from "react-icons/rx";
+import { AiOutlineMinus } from "react-icons/ai";
+import { useRef } from "react";
 
 const Layout = () => {
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
+  const [mouseHover, setMouseHover] = React.useState(false);
+  const [mobileNav, setMobileNav] = React.useState(false);
 
-  const toggleDrawer =
-    (anchor: Anchor, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event &&
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
+  const handleClick = () => {
+    setMobileNav(!mobileNav);
+  };
 
-      setState({ ...state, [anchor]: open });
-    };
-
-  const list = (anchor: Anchor) => (
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {mobileDrawer.map((item, index) => (
-          <ListItem disablePadding key={index}>
-            <ListItemButton>
-              <div className="flex justify-start items-center">
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemText>{item.text}</ListItemText>
-              </div>
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        <ListItem>
-          <ListItemButton>
-            <div className="flex justify-start items-center">
-              <ListItemIcon>
-                <LoginIcon />
-              </ListItemIcon>
-              <ListItemText>Log in</ListItemText>
-            </div>
-          </ListItemButton>
-        </ListItem>
-      </List>
-    </Box>
-  );
-
+  const handleCross = () => {
+    setMobileNav(false);
+  };
   return (
     <div>
-      <div>
-        <div className="hidden lg:flex flex-row justify-between items-center mx-8 py-8">
-          <div className="w-24 text-white font-serif">{nav.icon} Moon</div>
-          <div className="text-slate-100 w-96 flex flex-row justify-evenly cursor-pointer ">
-            <span className="w-20 text-center">{nav.services}</span>
-            <span className="w-20 text-center">{nav.contactUs}</span>
-            <span className="w-20 text-center">{nav.faqs}</span>
+      <div className="md:h-28 sm:h-20 h-24 shadow-xl flex md:justify-start items-center w-full md:ml-5">
+        {/* w-[1400px] h-[50px] flex justify-between text-MidnightNavy */}
+        <div className="h-[70px] flex justify-between md:justify-start w-full lg:h-[50px]">
+          <img
+            src="../img/Icon-Color.svg"
+            alt=""
+            //   w-[215px] h-full lg:ml-3
+            className="sm:ml-6 lg:mt-0 hidden md:block lg:mr-10"
+          />
+          <img
+            src="../img/Icon-Color.svg"
+            alt=""
+            //   w-[215px] h-full lg:ml-3
+            className="w-[90px] h-10 mt-4 sm:ml-6 lg:w-[215px] lg:mt-0 lg:h-full block md:hidden"
+          />
+          <div className="">
+            <div className="flex cursor-pointer justify-evenly md:justify-around items-center h-full font-[body] uppercase text-xl lg:justify-around w-full">
+              <div className="md:flex gap-8 hidden text-white font-serif">
+                <a href="#about" className="hover:opacity-40 duration-300">
+                  About
+                </a>
+                {/* <a href="#work" className="hover:opacity-40 duration-300">
+                  Work
+                </a> */}
+                <a href="#features" className="hover:opacity-40 duration-300">
+                  Features
+                </a>
+                <a href="#faq" className="hover:opacity-40 duration-300">
+                  Faq
+                </a>
+              </div>
+             
+              <div className="text-5xl text-white sm:ml-[100px] md:hidden">
+                <BiMenuAltRight onClick={handleClick} />
+              </div>
+            </div>
+            {/* border-collapse py-4 px-12 rounded-full bg-MidnightNavy text-white text-lg */}
           </div>
-          <div className="w-24">{nav.logIn}</div>
         </div>
-      </div>
-      <div className="lg:hidden flex justify-between items-center mx-8">
-        <div className="w-24 text-white font-serif">{nav.icon} Moon</div>
-        {(["right"] as const).map((anchor) => (
-          <React.Fragment key={anchor}>
-            <Button onClick={toggleDrawer(anchor, true)}>
-              <ToggleButton
-                value="right"
-                aria-label="right aligned"
-                style={{ color: "white" }}
-              >
-                <FormatAlignRightIcon />
-              </ToggleButton>
-            </Button>
-            <SwipeableDrawer
-              anchor={anchor}
-              open={state[anchor]}
-              onClose={toggleDrawer(anchor, false)}
-              onOpen={toggleDrawer(anchor, true)}
+        {/* mobileNav */}
+        <div
+        style={{background: "linear-gradient(180deg, hsla(0, 0%, 11%, 1) 0%, hsla(219, 98%, 50%, 1) 100%)"}}
+          className={
+            mobileNav
+              ? "w-full h-[100vh] fixed top-0 ease-in-out text-white lg:hidden z-10 duration-500"
+              : "fixed top-[-100%] duration-500 ease-in-out"
+
+              
+          }
+        >
+          {" "}
+        </div>
+
+        <div
+          className={
+            mobileNav
+              ? "fixed top-0 z-20 uppercase w-full text-MidnightNavy lg:hidden duration-500"
+              : "fixed top-[-100%] duration-500 ease-in-out"
+          }
+        >
+          <div className="h-28">
+            <div
+              onMouseEnter={() => setMouseHover(true)}
+              onMouseLeave={() => setMouseHover(false)}
+              className="float-right p-4 m-4 text-3xl duration-300 text-white"
             >
-              {list(anchor)}
-            </SwipeableDrawer>
-          </React.Fragment>
-        ))}
+              {mouseHover ? (
+                <AiOutlineMinus onClick={handleCross} />
+              ) : (
+                <RxCross1 onClick={handleCross} />
+              )}
+            </div>
+          </div>
+          <div className="flex flex-col justify-between text-white items-center h-[250px] text-2xl text-MidnightNavy font-bold">
+            <a href="#about" onClick={handleCross}>
+              About
+            </a>
+            {/* <a href="#work" onClick={handleCross}>
+              Work
+            </a> */}
+            <a href="#features" onClick={handleCross}>
+              Features
+            </a>
+            <a href="#faq" onClick={handleCross}>
+              Faq
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -26,8 +26,11 @@ const questionAnswer: QuestionAnswer[] = [
 export const Icon = ({ question, answer }: QuestionAnswer) => {
   const [open, setOpen] = useState<boolean>(false);
   return (
-    <div className="flex flex-col gap-4">
-      <Divider style={{ backgroundColor: "gray" }} />
+    <div className="flex flex-col gap-4" id="faq">
+      <Divider
+        className={`transition-all duration-500 ${open ? 'h-2' : 'h-0'}`}
+        style={{ backgroundColor: "" }}
+      />
       <div className="flex justify-between">
         <p className="text-lg">{question}</p>
         <IconButton

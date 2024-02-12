@@ -72,7 +72,7 @@ const contentServices: ContentServices = {
 
 const Services = () => {
   return (
-    <div className="w-full bg-gray-800 h-full py-10">
+    <div className="w-full h-full py-10">
       <div className="flex flex-col gap-6 text-white items-center lg:mx-32 md:mx-16 mx-3">
         <p className="text-xl">{contentServices.title}</p>
         <Typography variant="h3" sx={{ textAlign: "center" }}>
