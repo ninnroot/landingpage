@@ -33,7 +33,7 @@ const Layout = () => {
             className="w-[90px] h-10 mt-4 sm:ml-6 lg:w-[215px] lg:mt-0 lg:h-full block md:hidden"
           />
           <div className="">
-            <div className="flex cursor-pointer justify-evenly md:justify-around items-center h-full font-[body] uppercase text-xl lg:justify-around w-full">
+            <div className="flex cursor-pointer justify-evenly md:justify-around items-center h-full text-xl font-semibold lg:justify-around w-full">
               <div className="md:flex gap-8 hidden text-white font-serif">
                 <a href="#about" className="hover:opacity-40 duration-300">
                   About
@@ -48,7 +48,7 @@ const Layout = () => {
                   Faq
                 </a>
               </div>
-             
+
               <div className="text-5xl text-white sm:ml-[100px] md:hidden">
                 <BiMenuAltRight onClick={handleClick} />
               </div>
@@ -58,13 +58,14 @@ const Layout = () => {
         </div>
         {/* mobileNav */}
         <div
-        style={{background: "linear-gradient(180deg, hsla(0, 0%, 11%, 1) 0%, hsla(219, 98%, 50%, 1) 100%)"}}
+          style={{
+            background:
+              "linear-gradient(180deg, hsla(0, 0%, 11%, 1) 0%, hsla(219, 98%, 50%, 1) 100%)",
+          }}
           className={
             mobileNav
               ? "w-full h-[100vh] fixed top-0 ease-in-out text-white lg:hidden z-10 duration-500"
               : "fixed top-[-100%] duration-500 ease-in-out"
-
-              
           }
         >
           {" "}
