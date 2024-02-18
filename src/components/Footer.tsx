@@ -11,10 +11,14 @@ const Footer = () => {
   return (
     <div className="lg:mx-32 sm:mx-14 mx-3 py-20 ">
       <Divider style={{ backgroundColor: "gray" }} />
-      <div className="flex justify-between mt-10 gap-10">
+      <div className="flex justify-center items-center flex-wrap mt-10 gap-10">
         <p className="text-black-400 text-center text-sm">
         ©  2024 Schedjuice. All right reserved.
         </p>
+        <div className="text-sm flex items-center justify-center">
+        <a href="" className="mr-5">Terms of services </a>
+        <a href="">Privacy Policy</a>
+      </div>
         <div className="w-56 flex flex-wrap justify-center md:gap-6 gap-6">
           <a href="https://www.facebook.com/schedjuice" target="_black">
           <FacebookIcon sx={{ color: "black" }} />
@@ -24,14 +28,12 @@ const Footer = () => {
           <LinkedIn sx={{ color: "black" }} />
             
           </a>
-          <a href="">
-          <GitHubIcon sx={{ color: "black" }} />
-            
-          </a>
+          
         </div>
       </div>
+      
     </div>
-  );
-};
+  )
+}
 
 export default Footer;
