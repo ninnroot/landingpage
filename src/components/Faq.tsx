@@ -63,7 +63,7 @@ const Faq = () => {
   return (
     <div className="xl:mx-80 lg:mx-64 sm:mx-24 mx-8  text-white py-20">
       <p className="text-2xl md:text-3xl font-bold mb-10">
-        Frequent asked questions
+        Frequently Asked Questions
       </p>
       <div className="flex flex-col gap-4">
         {questionAnswer.map((item: QuestionAnswer) => (
