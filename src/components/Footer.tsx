@@ -13,27 +13,27 @@ const Footer = () => {
       <Divider style={{ backgroundColor: "gray" }} />
       <div className="flex justify-center items-center flex-wrap mt-10 gap-10">
         <p className="text-black-400 text-center text-sm">
-        ©  2024 Schedjuice. All right reserved.
+          © 2024 Schedjuice. All right reserved.
         </p>
         <div className="text-sm flex items-center justify-center">
-        <a href="" className="mr-5">Terms of services </a>
-        <a href="">Privacy Policy</a>
-      </div>
+          <a target="_blank" href="/terms" className="mr-5 underline">
+            Terms of services{" "}
+          </a>
+          <a target="_blank" href="/privacy" className="underline">
+            Privacy Policy
+          </a>
+        </div>
         <div className="w-56 flex flex-wrap justify-center md:gap-6 gap-6">
           <a href="https://www.facebook.com/schedjuice" target="_black">
-          <FacebookIcon sx={{ color: "black" }} />
-
+            <FacebookIcon sx={{ color: "black" }} />
           </a>
           <a href="">
-          <LinkedIn sx={{ color: "black" }} />
-            
+            <LinkedIn sx={{ color: "black" }} />
           </a>
-          
         </div>
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
 export default Footer;
