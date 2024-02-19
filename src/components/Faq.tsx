@@ -11,24 +11,37 @@ interface QuestionAnswer {
 
 const questionAnswer: QuestionAnswer[] = [
   {
-    question: "Why are you gay?",
-    answer: "I am not gay.",
+    question: "What kind of organizations can use Schedjuice?",
+    answer:
+      "Schools with 20 students to univeristies with tens of thousands of students can use our software. We have a solution for every size of organization.",
   },
   {
-    question: "Mama or nyimalay?",
-    answer: "Mama",
+    question: "How fast can we start using Schedjuice?",
+    answer:
+      "The setup process is very fast. You can start using our software in a few hours.",
   },
-  { question: "Do you love GUSTO?", answer: "No, I don't" },
-  { question: "Do you love me?", answer: "Why not?" },
-  { question: "JavaScript or TypeScript?", answer: "TypeScript" },
+  {
+    question: "I have some existing data, what is your migration plan?",
+    answer:
+      "Our engineers will work with you to migrate your data to our system. The migration fee is free for the first time.",
+  },
+  {
+    question: "What kind of payment do you accept?",
+    answer:
+      "We accept payments in USD, MMK, and THB. For exchage rates, please request a sale brochure.",
+  },
 ];
 
 export const Icon = ({ question, answer }: QuestionAnswer) => {
   const [open, setOpen] = useState<boolean>(false);
   return (
-    <div className="flex flex-col gap-4" id="faq">
+    <div
+      className="flex flex-col gap-4"
+      id="faq"
+      onClick={() => setOpen(!open)}
+    >
       <Divider
-        className={`transition-all duration-500 ${open ? 'h-2' : 'h-0'}`}
+        className={`transition-all duration-500 ${open ? "h-2" : "h-0"}`}
         style={{ backgroundColor: "" }}
       />
       <div className="flex justify-between">
@@ -37,7 +50,6 @@ export const Icon = ({ question, answer }: QuestionAnswer) => {
           style={{ color: "white" }}
           aria-label="expand row"
           size="small"
-          onClick={() => setOpen(!open)}
         >
           {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
         </IconButton>
