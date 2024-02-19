@@ -13,7 +13,7 @@ const questionAnswer: QuestionAnswer[] = [
   {
     question: "What kind of organizations can use Schedjuice?",
     answer:
-      "Schools with 20 students to univeristies with tens of thousands of students can use our software. We have a solution for every size of organization.",
+      "Schools with 20 students to universities with tens of thousands of students can use our software. We have a solution for every size of organization.",
   },
   {
     question: "How fast can we start using Schedjuice?",
