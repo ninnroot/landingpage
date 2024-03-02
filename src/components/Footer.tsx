@@ -27,7 +27,7 @@ const Footer = () => {
           <a href="https://www.facebook.com/schedjuice" target="_black">
             <FacebookIcon sx={{ color: "black" }} />
           </a>
-          <a href="">
+          <a href="https://www.linkedin.com/company/schedjuice/">
             <LinkedIn sx={{ color: "black" }} />
           </a>
         </div>
