@@ -17,9 +17,9 @@ const Layout = () => {
   };
   return (
     <div>
-      <div className="md:h-28 sm:h-20 h-24 shadow-xl flex md:justify-start items-center w-full md:ml-5">
+      <div className="md:h-28 sm:h-20 h-24 shadow-xl flex md:justify-start items-center md:mx-5">
         {/* w-[1400px] h-[50px] flex justify-between text-MidnightNavy */}
-        <div className="h-[70px] flex justify-between md:justify-start w-full lg:h-[50px]">
+        <div className="h-[70px] flex justify-between md:justify-between w-full lg:h-[50px]">
           <img
             src="../img/Icon-Color.svg"
             alt=""
